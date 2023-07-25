@@ -41,16 +41,16 @@
         <mark class="m-2">단어 등록하기</mark>
         <div class="input-group m-2">
             <span class="input-group-text">관사와 단어를 입력해주세요</span>
-            <input type="text" aria-label="First name" class="form-control">
-            <input type="text" aria-label="Last name" class="form-control">
+            <input id="input-article" type="text" aria-label="First name" class="form-control">
+            <input id="input-word" type="text" aria-label="Last name" class="form-control">
         </div>
         <div class="input-group mb-3 m-2">
             <span class="input-group-text" id="inputGroup-sizing-default">뜻을 입력해주세요</span>
-            <input type="text" class="form-control" aria-label="Sizing example input"
+            <input id="input-meaning" type="text" class="form-control" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <button class="btn btn-primary w-100 m-2" type="button">단어 등록하기</button>
+        <button id="upload-word" class="btn btn-primary w-100 m-2" type="button">단어 등록하기</button>
     </div>
     <div class="container-fluid w-50">
 
@@ -64,23 +64,14 @@
                 </tr>
             </thead>
             <tbody>
+                {% for word in words %}
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="row">{{ word.id }}</th>
+                    <td>{{ word.article }}</td>
+                    <td>{{ word.word }}</td>
+                    <td>{{ word.meaning }}</td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
@@ -92,6 +83,7 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="../static/script/index.js"></script>
 </body>
 
 </html>
