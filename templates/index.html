@@ -37,9 +37,18 @@
             </div>
         </div>
     </nav>
-    <div class="container-sm p-5 bg-dark my-5 mx-auto border rounded">
+    <div class="container-sm p-5 my-5 mx-auto border rounded bg-body-tertiary">
         <mark class="m-2">단어 등록하기</mark>
-        <div class="input-group m-2">
+        <div class="input-group m-2 shadow-sm">
+            <select class="form-select" id="exampleSelect">
+                <option selected="">품사를 선택해주세요</option>
+                <option value="1">명사</option>
+                <option value="2">동사</option>
+                <option value="3">형용사</option>
+                <option value="4">부사</option>
+              </select>
+        </div>
+        <div class="input-group m-2 shadow-sm">
             <span class="input-group-text">관사와 단어</span>
             <input id="input-article" type="text" aria-label="First name" class="form-control">
             <input id="input-word" type="text" aria-label="Last name" class="form-control">
